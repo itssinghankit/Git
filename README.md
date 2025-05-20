@@ -24,3 +24,21 @@
   git push --force origin <branch_name>
 ```
 
+### Stashing
+if you dont want to commit the changes and still want to visit other branch make sure to save(stash) your changes first and can retrieve(pop) any time after visisting the same feature branch
+```bash
+  git stash
+  git checkout old_branch
+  git checkout feature_branch
+  git stash pop 
+```
+
+### Pull vs Fetch
+If you create a new branch `develop` from let say `master` and then all the existing commits exits in master will also get present in `develop` apart from whether it actually exist in `remote/develop` or not. 
+Instead what you should do is fetch the `develop branch` and then checkout directly from any branch using
+```bash
+  git branch -b branch_name_develop remote_branch_name
+```
+
+> Always check if your local as well as remote heads are pointing to same commit or not, also check git graph to see if your branch is actually getiing deleted or not after you delete it
+
