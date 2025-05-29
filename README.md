@@ -42,3 +42,33 @@ Instead what you should do is fetch the `develop branch` and then checkout direc
 
 > Always check if your local as well as remote heads are pointing to same commit or not, also check git graph to see if your branch is actually getiing deleted or not after you delete it
 
+### Renaming branch
+#### Locally
+```bash
+    git branch -m new-branch-name
+```
+
+```bash
+  git branch -m old-branch-name new-branch-name
+```
+
+#### Remote
+- Rename it locally:
+```bash
+  git branch -m old-branch-name new-branch-name
+```
+
+- Delete the old branch from the remote:
+```bash
+  git push origin --delete old-branch-name
+```
+
+- Push the renamed branch to remote:
+```bash
+  git push origin new-branch-name
+```
+
+- If you want to track the new remote branch:
+```bash
+  git push --set-upstream origin new-branch-name
+```
