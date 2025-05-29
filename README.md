@@ -72,3 +72,21 @@ Instead what you should do is fetch the `develop branch` and then checkout direc
 ```bash
   git push --set-upstream origin new-branch-name
 ```
+
+### Discard changes
+- unstaged (without add)
+```bash
+  git restore .
+```
+
+- staged
+```bash
+  git restore --staged .
+          or
+  git restore --staged <file>
+```
+
+- all changes
+```bash
+  git reset --hard HEAD
+```
